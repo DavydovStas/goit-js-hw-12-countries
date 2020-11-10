@@ -30,18 +30,15 @@ function onSearch() {
           icon: true,
           delay: 2000,
         });
-        return
-      } else if (promise.length > 10 || promise.length < 1) {
+      } else if (promise.length > 10) {
         error({
           title: 'Ошибка',
           text: 'Нужно ввести более специфичный запрос, слишком много стран',
           icon: true,
           delay: 2000,
         });
-        return
       } else if (promise.length === 1) {
         renderCountrieCard(promise[0])
-        return;
       } else { renderCountriesList(promise) }
     }).catch(error => console.log(error))
   }
